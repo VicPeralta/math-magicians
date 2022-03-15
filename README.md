@@ -44,6 +44,8 @@ To get a local copy follow these simple example steps.
 
 👤 **Victor Peralta**
 - GitHub: [@VicPeralta](https://github.com/VicPeralta)
+- Twitter: [@VicPeralta](https://twitter.com/VicPeralta)
+- Linkedin: [@VicPeralta](https://www.linkedin.com/in/victor-peralta-gomez-648072107/)
 
 ## 🤝 Contributing
 
