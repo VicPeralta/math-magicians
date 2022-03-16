@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import KeyRow from './keyRow';
 import ResultWindow from './resultWindow';
 import calculate from '../logic/calculate';
 
-class Calculator extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKey = this.handleKey.bind(this);
-    this.refToResultWindow = React.createRef();
-    this.object = {
-      total: null,
-      next: null,
-      operation: null,
-    };
+const Calculator = () => {
+  const [state, setState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+  const refToResultWindow = useRef();
+
+  useEffect(() => {
+    if (state.next != null) {
+      refToResultWindow.current.setState({ value: state.next });
+    } else {
+      refToResultWindow.current.setState({ value: state.total ? state.total : '0' });
+    }
+  });
+
+  function processKey(key) {
+    const newState = calculate(state, key);
+    setState(newState);
   }
 
-  handleClick(e) {
+  function handleClick(e) {
     if (e.target.matches('button')) {
-      this.processKey(e.target.dataset.id);
+      processKey(e.target.dataset.id);
     }
   }
 
-  handleKey(e) {
+  function handleKey(e) {
     let textKey;
     e.preventDefault();
     if (e.code.substring(0, 5) === 'Digit') {
@@ -39,32 +47,20 @@ class Calculator extends React.PureComponent {
       textKey = 'AC';
     }
     if (textKey) {
-      // this.clickKey(textKey);
-      this.processKey(textKey);
+      processKey(textKey);
     }
   }
 
-  processKey(key) {
-    this.object = calculate(this.object, key);
-    if (this.object.next != null) {
-      this.refToResultWindow.current.setState({ value: this.object.next });
-    } else {
-      this.refToResultWindow.current.setState({ value: this.object.total ? this.object.total : '0' });
-    }
-  }
-
-  render() {
-    return (
-      <div className="calculator" role="button" tabIndex="0" onClick={this.handleClick} onKeyDown={this.handleKey}>
-        <ResultWindow ref={this.refToResultWindow} />
-        <KeyRow keys={['AC', '+/-', '%', '÷']} />
-        <KeyRow keys={['7', '8', '9', 'x']} />
-        <KeyRow keys={['4', '5', '6', '-']} />
-        <KeyRow keys={['1', '2', '3', '+']} />
-        <KeyRow keys={['0', '.', '=']} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="calculator" role="button" tabIndex="0" onClick={handleClick} onKeyDown={handleKey}>
+      <ResultWindow ref={refToResultWindow} />
+      <KeyRow keys={['AC', '+/-', '%', '÷']} />
+      <KeyRow keys={['7', '8', '9', 'x']} />
+      <KeyRow keys={['4', '5', '6', '-']} />
+      <KeyRow keys={['1', '2', '3', '+']} />
+      <KeyRow keys={['0', '.', '=']} />
+    </div>
+  );
+};
 
 export default Calculator;
