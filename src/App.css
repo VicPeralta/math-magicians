@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: gray;
 }
 
 .calculator {
@@ -13,18 +18,20 @@
   border-radius: 8px;
   padding: 10px;
   justify-content: space-around;
-  min-width: 200px;
+  min-width: 300px;
   min-height: 400px;
   margin: 15px auto;
+  background-color: black;
 }
 
 .results {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: right;
-  background-color: darkgray;
+  background-color: black;
   color: white;
   padding: 10px;
+  min-height: 4rem;
 }
 
 .keyRow {
@@ -38,9 +45,10 @@
   width: 25%;
   height: 100%;
   border: 1px solid gray;
-  border-radius: 8px;
   text-align: center;
   padding: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .orange {
