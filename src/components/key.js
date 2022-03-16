@@ -5,11 +5,11 @@ class Key extends React.PureComponent {
   render() {
     let color;
     const { name } = this.props;
-    if ('÷X-+='.includes(name)) color = 'orange';
+    if ('÷x-+='.includes(name)) color = 'orange';
     else color = 'black';
     const classList = `key ${color} ${name === '0' ? 'double' : ''}`;
     return (
-      <button type="button" className={classList}>
+      <button type="button" className={classList} data-id={name}>
         {name}
       </button>
     );
