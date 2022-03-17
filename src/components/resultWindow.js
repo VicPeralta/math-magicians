@@ -1,19 +1,14 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class ResultWindow extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { value: '0' };
-  }
+const ResultWindow = (props) => (
+  <div>
+    <p className="results">{props.value}</p>
+  </div>
+);
 
-  render() {
-    const { value } = this.state;
-    return (
-      <div>
-        <p className="results">{value}</p>
-      </div>
-    );
-  }
-}
-
+ResultWindow.propTypes = {
+  value: PropTypes.string.isRequired,
+};
 export default ResultWindow;
