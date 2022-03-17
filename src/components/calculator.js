@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import KeyRow from './keyRow';
 import ResultWindow from './resultWindow';
 import calculate from '../logic/calculate';
@@ -6,22 +6,21 @@ import calculate from '../logic/calculate';
 const Calculator = () => {
   const [state, setState] = useState({
     total: null,
-    next: null,
+    next: 0,
     operation: null,
   });
-  const refToResultWindow = useRef();
-
-  useEffect(() => {
-    if (state.next != null) {
-      refToResultWindow.current.setState({ value: state.next });
-    } else {
-      refToResultWindow.current.setState({ value: state.total ? state.total : '0' });
-    }
-  });
+  const [value, setValue] = useState('1');
 
   function processKey(key) {
     const newState = calculate(state, key);
     setState(newState);
+    if (newState.next != null) {
+      console.log(value);
+      setValue({ value: newState.next });
+    } else {
+      console.log(value);
+      setValue({ value: (newState.total !== null) ? newState.total : '0' });
+    }
   }
 
   function handleClick(e) {
@@ -50,10 +49,9 @@ const Calculator = () => {
       processKey(textKey);
     }
   }
-
   return (
     <div className="calculator" role="button" tabIndex="0" onClick={handleClick} onKeyDown={handleKey}>
-      <ResultWindow ref={refToResultWindow} />
+      <ResultWindow value={value} />
       <KeyRow keys={['AC', '+/-', '%', '÷']} />
       <KeyRow keys={['7', '8', '9', 'x']} />
       <KeyRow keys={['4', '5', '6', '-']} />
