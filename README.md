@@ -11,8 +11,8 @@
 - Javascript
 - React
 
-## Live Demo (If available)
-[Live demo](https://github.com/VicPeralta/math-magicians)
+## Live Demo
+[Live demo](https://vicperalta.github.io/math-magicians/)
 
 ## Mobile
 <img src="./mobile.png" width="50%" height="auto"/>
