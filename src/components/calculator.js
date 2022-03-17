@@ -9,17 +9,15 @@ const Calculator = () => {
     next: 0,
     operation: null,
   });
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState('0');
 
   function processKey(key) {
     const newState = calculate(state, key);
     setState(newState);
     if (newState.next != null) {
-      console.log(value);
-      setValue({ value: newState.next });
+      setValue(newState.next);
     } else {
-      console.log(value);
-      setValue({ value: (newState.total !== null) ? newState.total : '0' });
+      setValue((newState.total === null || newState.total === undefined) ? '0' : newState.total);
     }
   }
 
