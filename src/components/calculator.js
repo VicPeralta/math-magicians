@@ -13,7 +13,6 @@ const Calculator = () => {
 
   function processKey(key) {
     const newState = calculate(state, key);
-    console.log(newState);
     if (newState.operation && !newState.next && !newState.total) {
       setValue('0');
       return;
