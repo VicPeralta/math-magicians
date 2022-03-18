@@ -13,12 +13,27 @@ const Calculator = () => {
 
   function processKey(key) {
     const newState = calculate(state, key);
-    setState(newState);
-    if (newState.next != null) {
-      setValue(newState.next);
-    } else {
-      setValue((newState.total === null || newState.total === undefined) ? '0' : newState.total);
+    console.log(newState);
+    if (newState.operation && !newState.next && !newState.total) {
+      setValue('0');
+      return;
     }
+    setState(newState);
+    if (!newState.total && !newState.next && !newState.operation) {
+      setValue('0');
+      return;
+    }
+    if (newState.next !== null && newState !== undefined) {
+      // Show the formula
+      if (newState.operation !== null && newState.operation !== undefined) {
+        const formula = `${newState.total} ${newState.operation} ${newState.next}`;
+        setValue(formula);
+      } else {
+        // just show the key sequence
+        setValue(newState.next);
+      }
+    } else if (newState.next === null && newState.operation !== null) setValue(newState.operation);
+    else setValue((newState.total === null || newState.total === undefined) ? '0' : newState.total);
   }
 
   function handleClick(e) {
