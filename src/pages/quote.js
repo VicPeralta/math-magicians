@@ -1,6 +1,21 @@
+import './quote.css';
+
 const Quote = () => (
-  <div>
-    <h1>Mathematics consists of proving the most obvious thing in the least obvious way. ...</h1>
+  <div className="quote">
+    <figure>
+      <blockquote cite="https://www.huxley.net/bnw/four.html">
+        <p>
+          Good mathematicians see analogies.
+          Great mathematicians see analogies between analogies.
+        </p>
+      </blockquote>
+      <figcaption>
+        —Stefan Banach,
+        <cite>
+          Brave New World
+        </cite>
+      </figcaption>
+    </figure>
   </div>
 );
 

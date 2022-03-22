@@ -1,0 +1,30 @@
+.quote {
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+blockquote {
+  width: 80%;
+  margin: 0 auto;
+}
+
+figcaption {
+  width: 80%;
+  margin: 0 auto;
+}
+
+blockquote p {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}

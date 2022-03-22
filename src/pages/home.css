@@ -1,0 +1,24 @@
+
+.homePage {
+  min-height: 90vh;
+  padding-top: 3%;
+}
+
+.homePage > h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.homePage > p {
+  line-height: 1.6rem;
+  width: 80%;
+  margin: 20px auto;
+  text-align: justify;
+}
+
+.homePage a {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  text-decoration: none;
+}

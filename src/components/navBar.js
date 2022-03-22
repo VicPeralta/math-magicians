@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './navBar.css';
+import mathImage from './maths.png';
 
 const links = [
   {
@@ -9,7 +11,7 @@ const links = [
   },
   {
     id: 2,
-    path: '/app',
+    path: '/calculator',
     text: 'Calculator',
   },
   {
@@ -21,17 +23,20 @@ const links = [
 
 const NavBar = () => (
   <nav className="NavBar">
+    <img src={mathImage} alt="Math" />
     <h1>Math Magicians</h1>
-    {links.map((link) => (
-      <NavLink
-        key={link.id}
-        to={link.path}
-        style={{ isActive: 'active-link' }}
-        className="link"
-      >
-        {link.text}
-      </NavLink>
-    ))}
+    <div>
+      {links.map((link) => (
+        <NavLink
+          key={link.id}
+          to={link.path}
+          style={{ isActive: 'active-link' }}
+          className="link"
+        >
+          {link.text}
+        </NavLink>
+      ))}
+    </div>
   </nav>
 );
 
