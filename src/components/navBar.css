@@ -1,0 +1,21 @@
+.NavBar {
+  background-color: gray;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NavBar img {
+  width: 50px;
+}
+
+.NavBar .link {
+  margin-inline: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.NavBar .link:hover {
+  color: black;
+}
