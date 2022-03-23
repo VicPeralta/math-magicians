@@ -12,7 +12,9 @@
 - React
 
 ## Live Demo
-[Live demo](https://vicperalta.github.io/math-magicians/)
+[GitHub](https://vicperalta.github.io/math-magicians/)   
+[Heroku](https://vpg-math-magicians.herokuapp.com/)   
+[Netlify](https://statuesque-rolypoly-3f8152.netlify.app/)
 
 ## Mobile
 <img src="./mobile.png" width="50%" height="auto"/>
