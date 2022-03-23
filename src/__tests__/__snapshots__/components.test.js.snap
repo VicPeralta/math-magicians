@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components testing Calculator Component 1`] = `
+<div
+  className="calculator"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <div>
+    <p
+      className="results"
+    >
+      0
+    </p>
+  </div>
+  <div
+    className="keyRow"
+  >
+    <button
+      className="key black "
+      data-id="AC"
+      type="button"
+    >
+      AC
+    </button>
+    <button
+      className="key black "
+      data-id="+/-"
+      type="button"
+    >
+      +/-
+    </button>
+    <button
+      className="key black "
+      data-id="%"
+      type="button"
+    >
+      %
+    </button>
+    <button
+      className="key orange "
+      data-id="÷"
+      type="button"
+    >
+      ÷
+    </button>
+  </div>
+  <div
+    className="keyRow"
+  >
+    <button
+      className="key black "
+      data-id="7"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      className="key black "
+      data-id="8"
+      type="button"
+    >
+      8
+    </button>
+    <button
+      className="key black "
+      data-id="9"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      className="key orange "
+      data-id="x"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+  <div
+    className="keyRow"
+  >
+    <button
+      className="key black "
+      data-id="4"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      className="key black "
+      data-id="5"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      className="key black "
+      data-id="6"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      className="key orange "
+      data-id="-"
+      type="button"
+    >
+      -
+    </button>
+  </div>
+  <div
+    className="keyRow"
+  >
+    <button
+      className="key black "
+      data-id="1"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      className="key black "
+      data-id="2"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      className="key black "
+      data-id="3"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      className="key orange "
+      data-id="+"
+      type="button"
+    >
+      +
+    </button>
+  </div>
+  <div
+    className="keyRow"
+  >
+    <button
+      className="key black double"
+      data-id="0"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      className="key black "
+      data-id="."
+      type="button"
+    >
+      .
+    </button>
+    <button
+      className="key orange "
+      data-id="="
+      type="button"
+    >
+      =
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Components testing Key Component 1`] = `
+<button
+  className="key black "
+  data-id="3"
+  type="button"
+>
+  3
+</button>
+`;
+
+exports[`Components testing KeyRow Component 1`] = `
+<div
+  className="keyRow"
+>
+  <button
+    className="key black "
+    data-id="AC"
+    type="button"
+  >
+    AC
+  </button>
+  <button
+    className="key black "
+    data-id="+/-"
+    type="button"
+  >
+    +/-
+  </button>
+  <button
+    className="key black "
+    data-id="%"
+    type="button"
+  >
+    %
+  </button>
+  <button
+    className="key orange "
+    data-id="÷"
+    type="button"
+  >
+    ÷
+  </button>
+</div>
+`;
+
+exports[`Components testing NavBar Component 1`] = `
+<nav
+  className="NavBar"
+>
+  <img
+    alt="Math"
+    src="maths.png"
+  />
+  <h1>
+    Math Magicians
+  </h1>
+  <div>
+    <a
+      aria-current="page"
+      className="link active"
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "isActive": "active-link",
+        }
+      }
+    >
+      Home
+    </a>
+    <a
+      className="link"
+      href="/calculator"
+      onClick={[Function]}
+      style={
+        Object {
+          "isActive": "active-link",
+        }
+      }
+    >
+      Calculator
+    </a>
+    <a
+      className="link"
+      href="/quote"
+      onClick={[Function]}
+      style={
+        Object {
+          "isActive": "active-link",
+        }
+      }
+    >
+      Quote
+    </a>
+  </div>
+</nav>
+`;
+
+exports[`Components testing ResultWindow Component 1`] = `
+<div>
+  <p
+    className="results"
+  >
+    0
+  </p>
+</div>
+`;
